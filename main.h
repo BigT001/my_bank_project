@@ -16,7 +16,7 @@ struct user {
 	char confirmpass[30];
 };
 
-FILE *file;
+extern FILE *file;
 
 int main();
 void welcome();

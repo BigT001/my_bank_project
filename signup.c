@@ -4,9 +4,10 @@
  *
  */
 
+FILE *file;
+
 char signup()
 {
-	FILE *file;
 
 	char firstname[30];
 	char lastname[30];
@@ -14,11 +15,12 @@ char signup()
 	char password[30];
 	char confirmpass[30];
 
-	file = fopen("users.txt" "a");
+	file = fopen("users.txt", "a");
 
 	if (file == NULL)
 	{
 		printf("Not in data base.\n");
+		return 1;
 	}
 
 	printf("Enter first Name: \n");
@@ -44,9 +46,15 @@ char signup()
 	if (strcmp(password, confirmpass) == 0)
 	{
 		printf("check your email for confirmation code");
-	}
 
-	else {
+		fprintf(file, "First Name: %s", firstname);
+		fprintf(file, "Last Name: %s", lastname);
+		fprintf(file, "UserID: %s", userID);
+		fprintf(file, "Password: %s", password);
+
+		fclose(file);
+
+	} else {
 		printf("Passwords don't match");
 	}
 
