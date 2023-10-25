@@ -5,18 +5,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
+#include <stdbool.h>
+
+struct user {
+	char firstname[30];
+	char lastname[30];
+	char userID[30];
+	char password[30];
+	char confirmpass[30];
+};
+
+FILE *file;
 
 int main();
 void welcome();
-void login();
-void signup();
-
-struct login
-{
-	char fname[20];
-	char lname[20];
-	char username[20];
-	char password[20];
-}
+char signup();
 
 #endif
