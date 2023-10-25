@@ -22,20 +22,22 @@ char signup()
 		printf("Not in data base.\n");
 		return 1;
 	}
+	
+	printf("\tSIGNUP\t\n");
 
-	printf("Enter first Name: \n");
+	printf("Enter first Name: ");
 	fgets(firstname, sizeof(firstname), stdin);
 
-	printf("Enter last Name: \n");
+	printf("Enter last Name: ");
 	fgets(lastname, sizeof(lastname), stdin);
 
-	printf("Enter user ID: \n");
+	printf("Enter user ID: ");
 	fgets(userID, sizeof(userID), stdin);
 
-	printf("Enter password: \n");
+	printf("Enter password: ");
 	fgets(password, sizeof(password), stdin);
 
-	printf("Enter password again \n");
+	printf("Enter password again ");
 	fgets(confirmpass, sizeof(confirmpass), stdin);
 	
 	
@@ -45,7 +47,7 @@ char signup()
 
 	if (strcmp(password, confirmpass) == 0)
 	{
-		printf("check your email for confirmation code");
+		printf("check your email for confirmation code\n\n");
 
 		fprintf(file, "First Name: %s", firstname);
 		fprintf(file, "Last Name: %s", lastname);
@@ -55,7 +57,7 @@ char signup()
 		fclose(file);
 
 	} else {
-		printf("Passwords don't match");
+		printf("Passwords don't match\n\n");
 	}
 
 return (0);

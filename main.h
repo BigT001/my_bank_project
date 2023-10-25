@@ -8,6 +8,7 @@
 #include <unistd.h>
 #include <stdbool.h>
 
+
 struct user {
 	char firstname[30];
 	char lastname[30];
@@ -16,10 +17,20 @@ struct user {
 	char confirmpass[30];
 };
 
+
+struct User_login {
+	char userID[30];
+	char password[30];
+};
+
+/*struct user tempUser;*/
+
 extern FILE *file;
 
 int main();
 void welcome();
 char signup();
+int login();
+int isUserInFile(char *UserID, char *password);
 
 #endif

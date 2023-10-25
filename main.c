@@ -9,5 +9,7 @@ int main()
 
 	signup();
 
+	login();
+
 return (0);
 }
