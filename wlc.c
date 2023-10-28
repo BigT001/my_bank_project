@@ -5,45 +5,34 @@
 
 void welcome()
 {
-	printf("Welcome to city bank\n");
+	int option;
+	size_t bufsize = 0;
+	char *userInput = NULL;
 
-	printf("SIGNUP\n");
-	printf("LOGIN\n");
-	printf("Exit");
-}
+	printf("Welcome to PaycaRD\n\n");
 
-int main()
-{
-	int validate;
-	char input[10];
+	printf("Please enter 1 to get started or 2 to login\n");
+	printf("\tGet started: 1\n");
+	printf("\tI already have an account: 2\n\n");
 
-	do {
-		welcome();
-		printf("Enter option: ");
-		fgets(input, sizeof(input), stdin);
-		sscanf(input, "%d", &validate);
+	/*Using getline to read the user's choice*/
+	getline(&userInput, &bufsize, stdin);
+	option = atoi(userInput); /*converts the input to an integer*/
 
-		if (validate < 1 || validate > 3)
-			printf("Invalid. try agian.\n");
-			continue;
+	free(userInput);
+
+	if (option == 1)
+		{
+		signup();
 		}
 
-		switch (validate) {
-			case 1:
-				signup();
-				break;
-			case 2:
-				if (login()) {
-					printf("login successful");
-					/**logic will be added here.*/
-				}
-				break;
-			case 3:
-				printf("Goodbye!\n");
-				exit(0);
-			default:
-				printf("Invalid choice.try again\n");
-				break;
+	else if (option == 2)
+		{
+		login();
 		}
-return 0;
+	
+	else
+		{
+		printf("Invalid option\n");
+		}
 }

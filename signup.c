@@ -44,20 +44,12 @@ char signup()
 	printf("first Name: %s", firstname);
 	printf("last Name: %s", lastname);
 	printf("Username: %s", userID);
+	printf("password: %s", password);
+	printf("confirm pass: %s", confirmpass);
 
 	if (strcmp(password, confirmpass) == 0)
 	{
 		printf("check your email for confirmation code\n\n");
-
-		fprintf(file, "First Name: %s", firstname);
-		fprintf(file, "Last Name: %s", lastname);
-		fprintf(file, "UserID: %s", userID);
-		fprintf(file, "Password: %s", password);
-
-		fclose(file);
-
-	} else {
-		printf("Passwords don't match\n\n");
 	}
 
 return (0);
