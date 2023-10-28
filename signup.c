@@ -4,53 +4,34 @@
  *
  */
 
-FILE *file;
 
-char signup()
+char signup(struct user *user)
 {
+	printf("\tSIGNUP\t\n\n");
 
-	char firstname[30];
-	char lastname[30];
-	char userID[30];
-	char password[30];
-	char confirmpass[30];
+	size_t bufsize = MAX_LENGTH;
+	ssize_t user_read;
 
-	file = fopen("users.txt", "a");
+	printf("What is your name?\n");
+	printf("first Name:\t\t last name:\n\n");
+	user_read = getline(&user->firstname, &bufsize, stdin);
 
-	if (file == NULL)
-	{
-		printf("Not in data base.\n");
-		return 1;
-	}
-	
-	printf("\tSIGNUP\t\n");
 
-	printf("Enter first Name: ");
-	fgets(firstname, sizeof(firstname), stdin);
+	printf("What is your date of birth?\n");
+	printf("D/M/Y\n\n"); /** This should be a drop down menu */
 
-	printf("Enter last Name: ");
-	fgets(lastname, sizeof(lastname), stdin);
+	printf("What is your gender?\n");
+	printf("Male:\t\t Female:\n\n");
 
-	printf("Enter user ID: ");
-	fgets(userID, sizeof(userID), stdin);
+	printf("What is your mobile number?\n");
+	printf("Mobile: \n\n");
 
-	printf("Enter password: ");
-	fgets(password, sizeof(password), stdin);
+	printf("Create a password\n");
+	printf("Password: ");
 
-	printf("Enter password again ");
-	fgets(confirmpass, sizeof(confirmpass), stdin);
-	
-	
-	printf("first Name: %s", firstname);
-	printf("last Name: %s", lastname);
-	printf("Username: %s", userID);
-	printf("password: %s", password);
-	printf("confirm pass: %s", confirmpass);
 
-	if (strcmp(password, confirmpass) == 0)
-	{
-		printf("check your email for confirmation code\n\n");
-	}
+	/* name condition */
+
 
 return (0);
 }

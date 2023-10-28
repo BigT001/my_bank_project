@@ -8,22 +8,22 @@
 #include <unistd.h>
 #include <stdbool.h>
 
+#define MAX_LENGTH 50
 
 struct user {
-	char firstname[30];
-	char lastname[30];
-	char userID[30];
-	char password[30];
-	char confirmpass[30];
+	char firstname[MAX_LENGTH];
+	char lastname[MAX_LENGTH];
+	char userID[MAX_LENGTH];
+	char password[MAX_LENGTH];
+	char confirmpass[MAX_LENGTH];
 };
 
 
 struct User_login {
-	char userID[30];
-	char password[30];
+	char userID;
+	char password;
 };
 
-/*struct user tempUser;*/
 
 extern FILE *file;
 
@@ -31,6 +31,6 @@ int main();
 void welcome();
 char signup();
 int login();
-int isUserInFile(char *UserID, char *password);
+int inFile(char *UserID, char *password);
 
 #endif
