@@ -12,21 +12,27 @@ char signup(struct user *user)
 	size_t bufsize = MAX_LENGTH;
 	ssize_t user_read;
 
-	printf("What is your name?\n");
 	printf("first Name:\t\t last name:\n\n");
 	user_read = getline(&user->firstname, &bufsize, stdin);
 
 
 	printf("What is your date of birth?\n");
-	printf("D/M/Y\n\n"); /** This should be a drop down menu */
+	printf("Day: ");
+	scanf("%d", &user->birthD);
+	printf("Month: ");
+	scanf("%d", &user->birthM);
+	printf("Year: ");
+	scanf("%d", &user-> birthY);
 
-	printf("What is your gender?\n");
-	printf("Male:\t\t Female:\n\n");
+	while ((getchar()) != '\n') /* consume the new line character */
 
-	printf("What is your mobile number?\n");
+	printf("Gender?\n");
+	printf("1. Male\n");
+	printf("2. Female\n");
+	user_read = getline(&user->gender, &bufsize, stdin);
+
 	printf("Mobile: \n\n");
 
-	printf("Create a password\n");
 	printf("Password: ");
 
 

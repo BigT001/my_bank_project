@@ -10,8 +10,12 @@
 
 #define MAX_LENGTH 50
 
-struct user {
+struct user_info {
 	char firstname[MAX_LENGTH];
+	char lastname[MAX_LENGTH];
+	int birthD, birthM, birthY;
+	char gender[MAX_LENGTH];
+	int mobile[MAX_LENGTH];
 	char lastname[MAX_LENGTH];
 	char userID[MAX_LENGTH];
 	char password[MAX_LENGTH];
@@ -26,6 +30,17 @@ struct User_login {
 
 
 extern FILE *file;
+
+int Mobilevalidate(const char *mobile)
+	/*check if the mobile number is of digits and of max num of 11*/
+	int len = strlen(mobile);
+	for (int i = 0; i < len; i++)
+{
+	if (!isdigit(mobile[1]) || len > 11) {
+		return 0; /*invalid mobile number*/
+	}
+};
+
 
 int main();
 void welcome();
